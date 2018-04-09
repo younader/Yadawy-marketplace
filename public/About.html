@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name= "viewport" content="width=device=width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>About</title>
+</head>
+<body>
+        
+    <header class="v-header container">
+        <div>
+                    <nav style="position:absolute; z-index:4;">
+                        <div class="logo">
+                            <img src="Img/Logo.png"></img>
+                        </div>
+        
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#About" style="font-weight:bold;">About</a>
+                                <ul>
+                                        <li><a href="#What_is_Yadawy?">What is Yadawy?</a></li>
+                                        <li><a href="#OurTeam">Out Team</a></li>
+                                        <li><a href="#Mission">Mission</a></li>
+                                </ul>
+                            </li>    
+                            <li><a href="#">Products</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a class="active" href="Login.html">Log in</a></li>
+                        </ul>
+                    </nav>
+        </div>
+
+        <div class="fullscreen-video-wrap">
+            <video src="Video/Clay.mp4" autoplay="true" loop="true"></video>
+        </div>
+        <div class="fullscreen-video-wrap">
+            <video src="Video/Dish.mp4" autoplay="true" loop="true"></video>
+        </div>
+        <div class="fullscreen-video-wrap">
+            <video src="Video/Iron.mp4" autoplay="true" loop="true"></video>
+        </div>
+        
+        <div class="header-overlay"></div>
+
+        <div class="header-content">
+             <h1>Welcome to Yadawy.com</h1>
+             <p>
+                  The first Egyptian online website to bring all the handmade products and services to the lights.
+             </p>
+
+        </div>
+ 
+    </header>
+
+    <div>
+            <nav style="position:absolute; z-index:4; top:595px; background-color:rgb(245, 209, 156);">
+                <ul style="float: none; padding-left: 330px;">   
+                     <li><a href="#What_is_Yadawy?">What is Yadawy?</a></li>
+                     <li><a href="#OurTeam">Out Team</a></li>
+                     <li><a href="#Mission">Mission</a></li>       
+                </ul>
+            </nav>
+    </div>
+    </br>
+
+    <script type="text/javascript">
+    var slideIndex=1;
+    
+    showVideo(slideIndex);
+    setInterval(nextSlide, 10000);
+
+    function nextSlide(){
+        var slide= document.getElementsByClassName("fullscreen-video-wrap");
+        if (slideIndex>=slide.length) {slideIndex=0};
+        slideIndex++;
+        showVideo(slideIndex);
+    }
+
+    function currentSlide(n){
+        showVideo(slideIndex=n);
+    }
+
+    function showVideo(n){
+        var slide= document.getElementsByClassName("fullscreen-video-wrap");
+        var dots= document.getElementsByClassName("dots");
+       
+        if (n>slide.length){slideIndex=1};
+        if (n<1) {slideIndex= slide.length};
+
+        for (var i=0; i<slide.length; i++)
+        {
+            slide[i].style.display= "none";
+        };
+        slide[slideIndex-1].style.display="block";
+           
+        for (var i=0; i<dots.length; i++)
+        {
+            dots[i].className= dots[i].className.replace(" active", "");
+        };
+        dots[slideIndex-1].className += " active";  
+    }
+    </script>
+    </br>
+    </br>
+    <section class="section section-c" style="background:white;">
+            <div class="container">
+                <h1 id="About" text-align:left style="color:rgb(0, 0, 0);">About Yadawy?</h1>
+                <h3 id= "What_is_Yadawy?"align="left" style="color:rgb(0, 0, 0);">What is Yadawy?</h3>
+                <p align="left" style="color:rgb(43, 41, 41);">
+                Yadawy is an online website which serves both sellers and buyers to reach each other. As we know, the Egyptian community is a creative and productive one, many citizens excel
+                at more than one profession, and Egyptian mothers specifically possess an arsenal of
+                talent. The problem with the handmade industry, is that it’s hard to scale it and grow. It
+                usually spreads with a word of mouth and nothing else. It’s not easy to start a website
+                or a blog and maintain, as it requires constant monitoring, hosting and maintenance and
+                many other things. Our goal then, is to help people start their businesses and connect
+                them with buyers who might potentially be in great need of their products.
+                </p>
+
+                <h3 id="OurTeam"align="left" style="color:rgb(0, 0, 0);">Our Team</h3>
+                <p align="left" style="color:rgb(43, 41, 41);">
+                   Our team is a group of professional programmers that will guarantee the privacy and the security of all your accounts. They is no need for a credit card as the payment is in cash. Our team is constantly working to assure the are no spams and to provide you with all the handmade products you can't find, or to helo you sell all the handmade products you're creating. 
+                </p>
+                
+                <h3 id="Mission"align="left" style="color:rgb(0, 0, 0);">Mission</h3>
+                <p align="left" style="color: rgb(43, 41, 41);">
+                Our mission is to help buyers and sellers to communicate, creating opportunities for both of them to get the best chances. This application is a commerce platform for buying and selling handmade products by
+                directly connecting the customers with the craftsmen. Artists and craftsmen put their
+                products up for sale and add each product’s details (material, price, availability, etc.).
+                Customers can search for the products they want, compare different products and place
+                orders. They can also review the product and/or the craftsmen after receiving their
+                order. Craftsmen ship their products through one of the shipping agencies registered on
+                the application.
+                In the second section of the website, people will be able to showcase their services for
+                selling ( drivers, plumbers, cooks, etc…) and and hourly or monthly rate and buyers will
+                be able to get in touch directly with the sellers or hire them through the website.
+                </p>
+            </div>
+    </section>
+
+    <section class="section section-b">
+            <h6>Copyright © 2018 Yadawy Inc. All rights reserved.</h6>       
+    </section>
+</body>
+</html>    
