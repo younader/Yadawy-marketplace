@@ -38,9 +38,12 @@ GEM
     arel (6.0.4)
     autoprefixer-rails (8.2.0)
       execjs
-    bcrypt (3.1.11-x86-mingw32)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
+    bootstrap (4.0.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -99,6 +102,7 @@ GEM
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
+    popper_js (1.12.9)
     rack (1.6.9)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -199,7 +203,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  autoprefixer-rails
+  bootstrap (~> 4.0.0)
   bootstrap-sass
   byebug
   capybara (~> 2.4.4)

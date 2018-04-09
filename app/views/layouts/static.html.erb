@@ -1,18 +1,21 @@
+
 <!DOCTYPE html>
+
 <html>
 <head>
   <title>Website</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm',media:'all','data-turbolinks-track'=>true %>
-
+  <%= stylesheet_link_tag 'boot',media:'all','data-turbolinks-track' => true  %>
+  <%= stylesheet_link_tag 'static_pages', media:'all' ,'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-</nav>
+<%= render 'static_pages/navigation' %>
 <%= yield %>
 
+<section class="section section-b">
+  <h6>Copyright © 2018 Yadawy Inc. All rights reserved.</h6>
+</section>
 </body>
 </html>

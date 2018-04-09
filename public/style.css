@@ -49,7 +49,7 @@ body{
     left:0;
     /*background: #225470;*/
     background: blanchedalmond;
-    z-index: 1;
+    z-index: -1;
     opacity: 0.75;
 }
 
@@ -86,12 +86,12 @@ nav{
     box-sizing: border-box;
     transition: .3s;
     opacity: 0.8;
-    filter:alpha (opacity=80);
+    filter:alpha(opacity=80);
 }
 
 nav.black{
     background: rgba(0,0,0,0.8);
-    height: 100x;
+    height: 100px;
     padding: 10px 100px;
 }
 
@@ -149,7 +149,7 @@ nav ul li a:focus{
 nav ul li a.active{
     background: #E2472F;
     color: #fff;
-    border-radius: cover;
+    border-radius:cover;
 }
 
 nav ul li:hover{
