@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :contacts ,only: [:new, :create]
+
   get 'static_pages/home'
 
   get 'static_pages/about'
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   get 'static_pages/signup'
 
   get 'static_pages/login'
+
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
