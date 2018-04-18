@@ -1,20 +1,100 @@
 // Place all the styles related to the contacts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.field, textf{
+.fields{
 
-  margin: .8em auto;
-  font-family: inherit;
-  text-transform: inherit;
-  font-size: inherit;
+  background-color: transparent;
+  border: none;
 
-  display: block;
-  width: 280px;
-  padding: .4em;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-family: Arvo;
+  font-size: 18px;
+  height: 50px;
+  left: 50%;
+  margin: 0px 10px 10px 0px;
+  padding: 10px 10px;
+  position: relative;
+  display:block;
+  top: 50%;
+  width: 200px;
+  flex:1;
+
 }
 .mycontainer{
 
   display: block;
   position:relative;
   top: 300px;
+
+}
+.flabel{
+  dispaly:block;
+  position:relative;
+  margin: 0px 10px 10px 0px;
+  flex: 1;
+}
+.wrapper {
+  background-color: #FFF;
+  border-radius: 2px;
+  box-shadow: 0px 2px 1px 0px #DDD;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  position: relative;
+  top: 50%;
+  width: 300px;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  box-sizing: border-box;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height: 50px;
+  left: 50%;
+  margin: -25px 5px 5px -100px;
+  padding: 10px 0px;
+  position: relative;
+  top: 50%;
+  width: 200px;
+  display:block;
+  flex:1;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: dodgerblue;
+}
+
+.input:focus+.underline {
+  transform: scale(1);
+}
+
+.underline {
+  background-color: dodgerblue;
+  display: inline-block;
+  height: 2px;
+  left: 50px;
+  margin-top: -4px;
+  position: relative;
+  top: -18px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  width: 202px;
+
 }

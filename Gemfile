@@ -15,7 +15,11 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'autoprefixer-rails'
 gem 'web-console', '~> 2.0', group: :development
 # Use ActiveModel has_secure_password
-#gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.11', platforms: [:ruby, :x64_mingw, :mingw]
+gem "mini_magick"
+# gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+#gem 'rmagick'
+gem "carrierwave"
 group :development, :test do
   gem 'byebug'
   gem 'spring'
@@ -30,6 +34,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'capybara', '~> 2.4.4'
 gem 'poltergeist', '~> 1.6.0'
 gem 'phantomjs', '~> 1.9.8.0'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 gem 'minitest'
 
