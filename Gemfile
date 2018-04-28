@@ -20,6 +20,8 @@ gem "mini_magick"
 # gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 #gem 'rmagick'
 gem "carrierwave"
+gem 'devise'
+
 group :development, :test do
   gem 'byebug'
   gem 'spring'
