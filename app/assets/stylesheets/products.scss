@@ -1,3 +1,22 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.searchcontainer{
+  width: 100%;
+  min-height: 100px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  background-color: #6c757d;
+}
+.card{
+  width: 30%;
+  height: 150px;
+
+}

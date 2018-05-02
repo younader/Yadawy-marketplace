@@ -13,7 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-
+//= requrie activestorage
 //= require popper
 //= require bootstrap-sprockets
+//= requrie font-awesome
+
 //= require_tree .

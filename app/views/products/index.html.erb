@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
+<%= form_tag products_path, :method =>'get' do %>
+ <div class=" searchcontainer ">
+   <div class="row">
+      <div class="input-group mb-3 col-6">
+      <%=text_field_tag :search, params[:search], class:"form-control", type:"text" %>
 
+      </div>
+      <div class="col-auto">
+      <%= submit_tag "Search", class:"btn btn-primary" %>
+      </div>
+    </div>
+ </div>
+<% end  %>
 <h1>Listing Products</h1>
 
 <table>
@@ -14,20 +26,26 @@
     </tr>
   </thead>
 
-  <tbody>
+
+  <div class="card-deck">
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.category %></td>
-        <td><%= product.seller %></td>
-        <td><%= product.specs %></td>
-        <td><%= product.image %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
+
+      <div class="card">
+        <%= image_tag product.image.url(:productimage) if product.image? %>
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <%= product.specs%>
+        </div>
+        <div class="card-footer">
+
+          <%= button_to 'show',  product , class:"btn",:method => :get%>
+        </div>
+      </div>
+
     <% end %>
-  </tbody>
+  </div>
+
 </table>
 
 <br>
