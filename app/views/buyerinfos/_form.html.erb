@@ -1,0 +1,37 @@
+<%= form_for(@buyerinfo, :html =>{:multipart=> true}) do |f| %>
+  <% if @buyerinfo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@buyerinfo.errors.count, "error") %> prohibited this buyerinfo from being saved:</h2>
+
+      <ul>
+      <% @buyerinfo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="infofield">
+    <%= f.label :fname %><br>
+    <%= f.text_field :fname %>
+  </div>
+  <div class="infofield">
+    <%= f.label :lname %><br>
+    <%= f.text_field :lname %>
+  </div>
+  <div class="infofield">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="infofield">
+    <%= f.label :phone %><br>
+    <%= f.telephone_field :phone %>
+  </div>
+  <div class="infofield">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit "Update my info", class:"btn"%>
+  </div>
+<% end %>

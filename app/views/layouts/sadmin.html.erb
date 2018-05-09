@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website</title>
+  <%= stylesheet_link_tag    'boot', media: 'all', 'data-turbolinks-track' => true %>
+
+  <%= stylesheet_link_tag    'contacts', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'static_pages', media:'all' ,'data-turbolinks-track' => true %>
+
+  <%= stylesheet_link_tag 'main', media:'all' ,'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'util', media:'all' ,'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'products', media:'all', 'data-turbolinks-track' =>true%>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'sadmin', media: 'all', 'data-turbolinks-track' => true%>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= render 'static_pages/navigation' %>
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4">
+    <%= render 'sadmin/sidebar' %>
+    </div>
+    <div class="col-12 col-sm-6 col-md-8">
+    <%= yield %>
+      <p>hoba lala laland</p>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

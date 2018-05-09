@@ -1,0 +1,14 @@
+
+<% if notice %>
+  <aside id=“notice”><%= notice %></aside>
+<% end %>
+<h2>Your Yadawy Cart</h2>
+<ul class="list-group">
+  <% @cart.line_items.each do |item| %>
+    <li class="list-group-item"><%= item.quantity %> &times; <%= item.product.name %><div class="price"><%= number_to_currency(item.total_price)%> </div></li>
+  <% end %>
+</ul>
+<div><%= number_to_currency(@cart.total_price)%></div>
+<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>

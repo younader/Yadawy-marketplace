@@ -15,8 +15,62 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body{
+  background-color:whitesmoke ;
+}
+
 #NavY{
   display: block;
 margin: 70px;
+
+}
+
+.price {
+  font-size: 1.414em;
+}
+.infocontainer{
+  text-decoration-color: whitesmoke;
+
+  align-content: center;
+  margin:auto;
+  background: #1e5799; /* Old browsers */
+  background: -moz-linear-gradient(top, #1e5799 0%, #207cca 48%, #207cca 48%, #2989d8 64%, #2989d8 100%, #7db9e8 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #1e5799 0%,#207cca 48%,#207cca 48%,#2989d8 64%,#2989d8 100%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #1e5799 0%,#207cca 48%,#207cca 48%,#2989d8 64%,#2989d8 100%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+.infofield
+{
+  align-content:center ;
+  color:white;
+  margin: 20px;
+}
+.NavigationBar li span{
+  padding: 30px 25px 0 25px;
+}
+.Loginform
+{
+  background-color: #FFF;
+  border-radius: 20px ;
+  border-width: 20px;
+  box-shadow: 0px 2px 1px 0px #DDD;
+  box-sizing: border-box;
+  display: block;
+  flex-direction: column;
+  left: 50%;
+  margin: -150px 20px 0 -100px;
+  position: absolute;
+  padding:150px 0 0 0;
+  max-width:400px;
+  top:30%;
+  width: 30%;
+}
+.Loginform li{
+  margin: 20px;
+  padding: 5px 15px 5px 15px;
+}
+.Loginform h2{
+
+  text-align: center;
 
 }

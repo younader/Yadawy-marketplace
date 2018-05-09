@@ -1,0 +1,2 @@
+module SadminHelper
+end

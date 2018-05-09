@@ -1,9 +1,14 @@
 
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   devise_for :sellers
+  resources :sadmin , only: [:index]
+
   devise_for :buyers
   resources :products
-  get'/login'=> "sessions#new", as:"login"
+  resources :buyerinfos
+  get '/login'=> "sessions#new", as:"login"
 
   get 'sessions/create'
   get'sessions/new'
@@ -24,6 +29,7 @@ Rails.application.routes.draw do
   get 'static_pages/signup'
 
   get 'static_pages/login'
+
 
   root 'static_pages#home'
 

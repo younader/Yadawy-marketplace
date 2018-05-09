@@ -3,5 +3,5 @@ class Buyer < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
-  has_one :buyer
+  has_one :buyerinfo
 end

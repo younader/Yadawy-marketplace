@@ -1,0 +1,56 @@
+
+
+  <!-- Sidebar -->
+  <div id="wrapper" class="toggled">
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+
+        </a>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+          <%= content_tag :span, "", class:"fa fa-home fa-2x" , :style=>"color:brown" %>
+          Dashboard
+        <% end %>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+          <%= content_tag :span, "", class:"fa fa-archive fa-2x" , :style=>"color:turquoise" %>
+          Products
+        <% end %>
+      </li>
+      <li>
+
+        <%= link_to root_path do %>
+          <%= content_tag :span, "   ", class:"fa fa-clock-o fa-2x" , :style=>"color:purple" %>
+          Services
+        <% end %>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+          <%= content_tag :span, "   ", class:"fa fa-book fa-2x" , :style=>"color:red" %>
+
+          Orders
+        <% end %>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+
+          <%= content_tag :span, "", class:"fa fa-money fa-2x" , :style=>"color:green" %>
+          Revenue
+        <% end %>
+      </li>
+      <li>
+        <%= link_to root_path do %>
+
+          <%= content_tag :span, "", class:"fa fa-bar-chart fa-2x" , :style=>"color:dodgerblue" %>
+          Statistics
+        <% end %>
+      </li>
+
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+  </div>

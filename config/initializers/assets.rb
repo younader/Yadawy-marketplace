@@ -8,6 +8,7 @@ Rails.application.config.assets.precompile += %w( contacts.css   )
 Rails.application.config.assets.precompile += %w( main.css   )
 Rails.application.config.assets.precompile += %w( util.css   )
 Rails.application.config.assets.precompile += %w( products.css   )
+Rails.application.config.assets.precompile += %w( sadmin.css   )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

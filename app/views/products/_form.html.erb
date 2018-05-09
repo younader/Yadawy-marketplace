@@ -19,10 +19,12 @@
     <%= f.label :category %><br>
     <%= f.text_field :category %>
   </div>
+
   <div class="field">
-    <%= f.label :seller %><br>
-    <%= f.text_field :seller %>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
   </div>
+
   <div class="field">
     <%= f.label :specs %><br>
     <%= f.text_field :specs %>
@@ -32,6 +34,7 @@
     <%= f.file_field :image %>
   </div>
   <div class="actions">
+    <%@product.seller= current_seller  %>
     <%= f.submit %>
   </div>
 <% end %>
