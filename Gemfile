@@ -42,4 +42,8 @@ gem 'poltergeist', '~> 1.6.0'
 gem 'phantomjs', '~> 1.9.8.0'
 #gem 'bootstrap-sass'
 gem 'minitest'
+gem 'chartjs-ror'
 
+#gem 'administrate', '~> 0.10.0'
+#gem 'momentjs-rails'
+#gem 'will_paginate'

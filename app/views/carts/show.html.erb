@@ -1,10 +1,16 @@
 
 <% if notice %>
-  <aside id=“notice”><%= notice %></aside>
+  <aside id=“notice alert alert-info”><%= notice %></aside>
 <% end %>
+<div class="wrap cf">
+  <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
+  <div class="heading cf">
+    <h1>My Yadawy Cart</h1>
+    <a href="#" class="continue">Continue Shopping</a>
+  </div>
 <h2>Your Yadawy Cart</h2>
 
-<ul class="list-group">
+<ul class="cartWrap">
   <% @cart.line_items.each do |item| %>
     <li class="list-group-item"><%= item.quantity %> &times; <%= item.product.name %><div class="price"><%= number_to_currency(item.total_price)%> </div></li>
   <% end %>
@@ -12,3 +18,4 @@
 <div><%= number_to_currency(@cart.total_price)%></div>
 <%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= button_to 'Checkout' , new_order_path, method: :get, class:"checkout" %>
+</div>

@@ -4,8 +4,13 @@
 
 
     <div class="card">
-      <%= image_tag product.image.url(:productimage),size:"204x204"if product.image? %>
-      <div class="card-body">
+      <% if product.image? %>
+      <%= image_tag product.image.url(:productimage),class: "card-img-top",size:"204x204" %>
+      <% else %>
+      <%= image_tag 'No_Image_Available.jpg',class: "card-img-top",size:"204x204" %>
+        <%end %>
+
+        <div class="card-body">
         <h5 class="card-title"><%= product.name %></h5>
         <%= sanitize(product.specs) %>
         <div class="price card">

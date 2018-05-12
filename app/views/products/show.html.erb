@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="notice alert alert-info" ><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
@@ -22,9 +22,15 @@
 
 <p>
   <strong>Image:</strong>
+  <%if @product.image? %>
   <%= image_tag @product.image.url(:thumb) if @product.image? %>
-
+<% else %>
+  <%= image_tag 'No_Image_Available.jpg', size:"204x204" %>
+  <%end %>
 </p>
+
+<%= render "comments/comments" %>
+<%= render "comments/form" %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', product_path %>

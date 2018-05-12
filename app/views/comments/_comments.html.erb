@@ -1,0 +1,16 @@
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <div class="container">
+      <div class="dialogbox">
+        <div class="body">
+          <span class="tip tip-up"></span>
+          <div class="message">
+            <%= simple_format comment.content %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+
+</div>

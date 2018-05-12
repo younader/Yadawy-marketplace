@@ -11,8 +11,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="overlay" >
+</div>
 <%= render 'static_pages/navigation' %>
-<p id="notice"><%= notice%></p>
+<p id="notice alert alert-info" ><%= flash_messages%></p>
 <%= yield %>
 
 <section class="section section-b">

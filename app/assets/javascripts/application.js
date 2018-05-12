@@ -19,3 +19,22 @@
 //= requrie font-awesome
 
 //= require_tree .
+/*
+$(document).ready(function(){
+$('.signup-btn').click(function(){
+
+    alert($(this).text());
+    };
+
+);
+$(document).on('turbolinks:load', function() {
+
+    $('.signup-btn').on("click",function(){
+
+       $('#overlay').css("display","block");
+    });
+
+});
+});
+*/
+

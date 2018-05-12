@@ -2,24 +2,23 @@
 <div class="NavigationBar container" id="NavY">
   <nav>
     <div class="logo">
-      <a href="home"><%= image_tag 'logo3.png'%></a>
+      <a href="/"><%= image_tag 'logo3.png'%></a>
     </div>
 
     <ul>
-      <li><a href="home" style="font-weight:bold;">Home</a></li>
-      <li><a href="about">About</a>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "About", static_pages_about_path %>
         <!--<ul>
                 <li><a href="About.html/#What_is_Yadawy?">What is Yadawy?</a></li>
                 <li><a href="#OurTeam">Out Team</a></li>
                 <li><a href="#Mission">Mission</a></li>
         </ul>-->
       </li>
-      <li><a href="#">Products</a></li>
+      <li><%= link_to "Products", products_path %></li>
       <li><a href="#">Brands</a></li>
-      <li><a href="../contacts/new">Contact Us</a></li>
+      <li><%= link_to "Contact Us", new_contact_path %></li>
       <% if buyer_signed_in? %>
-        <li>  <%=fa_icon "shopping-cart 9x" , class: " fas fa-shopping-cart fa-3x" , style: "color:brown; margin: 20px"%></li>
-
+        <li >  <%=fa_icon "shopping-cart 9x" , class: " fas fa-shopping-cart fa-3x" , style: "color:brown; margin: 20px"%></li>
 
         <li>  <%= image_tag 'randomavatar.png',size:'70x70' %></li>
         <li><%= link_to "Logout",destroy_buyer_session_path, method: :delete %></li>
@@ -33,8 +32,34 @@
         <li>  <%= image_tag 'randomavatar.png',size:'60x60' %></li>
         <li><%= link_to "Logout",destroy_seller_session_path, method: :delete %></li>
       <% else %>
-      <li><a class="active" href="login">Log in</a></li>
-      <li><a class="active" href="signup">Sign Up</a></li>
+      <li><%= link_to "Log in" ,"#popup1", class:"active login-btn", method: :get%></li>
+        <div id="popup1" class="overlay">
+          <div class="popup">
+            <h2>Hello There!</h2>
+            <a class="close" href="">&times;</a>
+            <div class="content">
+              <ul>
+             <li style="margin: 25px;"> <h4>Do you want to login in as a <span><%= button_to "Buyer", new_buyer_session_path ,class:"btn btn-danger",style:"width:auto;float:right " , method: :get%></span></h4></li>
+             <li style="margin: 25px;">  <h4> Or do you want to login in as a <span><%= button_to "Seller", new_seller_session_path , class:"btn btn-warning",style:"width:auto;float:right", method: :get %></span></h4></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+        <li><%= link_to "Sign Up" ,"#popup2", class:"active login-btn", method: :get%></li>
+        <div id="popup2" class="overlay">
+          <div class="popup">
+            <h2>Hello There!</h2>
+            <a class="close" href="">&times;</a>
+            <div class="content">
+              <ul>
+                <li style="margin: 25px;"> <h4>Do you want to Sign Up in as a <span><%= button_to "Buyer", new_buyer_registration_path ,class:"btn btn-danger",style:"width:auto;float:right " , method: :get%></span></h4></li>
+                <li style="margin: 25px;">  <h4> Or do you want to Sign Up in as a <span><%= button_to "Seller", new_seller_registration_path , class:"btn btn-warning",style:"width:auto;float:right", method: :get %></span></h4></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </li>
       <li><a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a></li>
     <% end  %>
     </ul>
