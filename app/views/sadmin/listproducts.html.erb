@@ -1,0 +1,25 @@
+<div class="card-deck">
+  <%= button_to "+ Create a New Product", sadmin_products_new_path, method: :get,class:"btn btn-primary btn-lg", style:"margin: 0 50% 0 50%" %>
+  <% @products.each do |product| %>
+
+
+    <div class="card">
+      <%= image_tag product.image.url(:productimage) if product.image? %>
+      <div class="card-body">
+        <h5 class="card-title"><%= product.name %></h5>
+        <%= sanitize(product.specs) %>
+        <div class="price">
+          <h3><%= number_to_currency(product.price) %></h3>
+
+        </div>
+      </div>
+
+      <div class="card-footer">
+
+        <%= button_to 'show',  product , class:"btn btn-primary",:method => :get%>
+        <%= button_to 'Edit', product , class:"btn btn-primary", :method => :get %>
+      </div>
+    </div>
+
+  <% end %>
+</div>

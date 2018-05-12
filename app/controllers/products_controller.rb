@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_seller!, only:[:new, :create]
   # GET /products
   # GET /products.json
   def index
@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   def new
 
     @product = Product.new
+
   end
 
   # GET /products/1/edit
@@ -26,6 +27,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    @product.seller_id=current_seller.id
 
     respond_to do |format|
       if @product.save

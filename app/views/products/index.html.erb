@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <%= image_tag 'searchpagel.jpg',class:"img-fluid" %>
+</div>
 <%= form_tag products_path, :method =>'get' do %>
  <div class=" searchcontainer ">
    <div class="row">
@@ -7,48 +10,41 @@
 
       </div>
       <div class="col-auto">
-      <%= submit_tag "Search", class:"btn btn-primary" %>
+      <%= submit_tag "Search", class:"btnw btn-primary" %>
       </div>
     </div>
  </div>
 <% end  %>
-<h1>Listing Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Seller</th>
-      <th>Specs</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
 
   <div class="card-deck">
+    <div class="card-columns">
+
+
     <% @products.each do |product| %>
 
 
       <div class="card">
-        <%= image_tag product.image.url(:productimage) if product.image? %>
+        <%= image_tag product.image.url(:productimage) , class: "card-img-top" ,size:"204x204", alt: "Card image cap" if product.image? %>
         <div class="card-body">
           <h5 class="card-title"><%= product.name %></h5>
           <%= sanitize(product.specs) %>
           <div class="price">
           <h3><%= number_to_currency(product.price) %></h3>
-          <%= button_to 'Add to Cart', line_items_path(product_id: product),class:"btn-primary" %>
+
         </div>
         </div>
 
         <div class="card-footer">
-
-          <%= button_to 'show',  product , class:"btn",:method => :get%>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product),class:"btn btn-primary" %>
+        <span>  <%= button_to 'show',  product , class:"btn btn-info",:method => :get%></span>
         </div>
       </div>
 
     <% end %>
+      </div>
+  </div>
   </div>
 
 </table>

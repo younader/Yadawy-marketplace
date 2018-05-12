@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :seller
   has_many :line_items
+  has_many :comments, as: :commentable
   #defining action to do before the deletion of a product by a seller
   before_destroy :ensure_not_referenced_by_any_line_item
 

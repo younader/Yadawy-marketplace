@@ -1,26 +1,36 @@
-<h2>Log in</h2>
-
+<div class="Loginform">
+  <div class="container">
+    <h2><span><%= image_tag 'logoicon.png', size:'90x90' %></span>Login</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <ul>
+        <li>
+          <div class="field form-group">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Enter your email" %>
+          </div>
+        </li>
+        <li>
+          <div class="field form-group">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+          </div>
+        </li>
+        <% if devise_mapping.rememberable? -%>
+          <li>
+            <div class="field form-group">
+              <%= f.check_box :remember_me , class:"form-check-input" %>
+              <%= f.label :remember_me ,class:"form-check-label"%>
+            </div>
+          </li>
+        <% end -%>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
+        <li>
+          <div class="actions ">
+            <%= f.submit "Login", class:"btn btn-primary" %>
+          </div>
 <% end %>
-
+    </li>
 <%= render "buyers/shared/links" %>
+    </ul>
+  </div>
+</div>

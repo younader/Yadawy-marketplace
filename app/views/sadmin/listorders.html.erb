@@ -1,0 +1,22 @@
+<table>
+  <thead>
+  <tr>
+    <th>Order Number</th>
+    <th>Product</th>
+    <th>Product Name</th>
+    <th>Created At</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <% @line_items.each do |order| %>
+  <tr>
+    <td data-column="Order Number"><%= order.id %></td>
+    <td data-column="Product"><%= order.product_id %></td>
+    <td data-column="Product Name"><%=Product.find(order.product_id).name%></td>
+    <td data-column="Created At"><%= order.created_at %></td>
+  </tr>
+
+    <% end %>
+  </tbody>
+</table>

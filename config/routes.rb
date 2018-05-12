@@ -1,12 +1,20 @@
 
 Rails.application.routes.draw do
+  get 'comments/index'
+  get 'comments/new'
+  resources :orders
   resources :line_items
   resources :carts
   devise_for :sellers
   resources :sadmin , only: [:index]
+  get 'sadmin/products' => "sadmin#listproducts"
+  get 'sadmin/products/new' =>"sadmin#newproduct"
+  get 'sadmin/orders' =>"sadmin#listorders"
 
   devise_for :buyers
-  resources :products
+  resources :products do
+    resources :comments
+  end
   resources :buyerinfos
   get '/login'=> "sessions#new", as:"login"
 

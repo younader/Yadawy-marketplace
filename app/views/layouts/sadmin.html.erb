@@ -18,14 +18,16 @@
 <body>
 
 <%= render 'static_pages/navigation' %>
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-6 col-md-4">
+    <div class="col-sm-6 col-md-4 col-lg-2 ">
     <%= render 'sadmin/sidebar' %>
     </div>
-    <div class="col-12 col-sm-6 col-md-8">
+    <div class="col-sm-6 col-md-8 col-lg-11 col-xl-10">
+      <div class="injector">
     <%= yield %>
-      <p>hoba lala laland</p>
+      </div>
+
     </div>
   </div>
 </div>

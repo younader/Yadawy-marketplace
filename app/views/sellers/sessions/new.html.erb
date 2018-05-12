@@ -1,6 +1,6 @@
 <div class="Loginform">
 <div class="container">
-  <h2>Log in</h2>
+  <h2><span><%= image_tag 'logoicon.png', size:'90x90' %></span>Login</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <ul>
       <li>
@@ -26,7 +26,7 @@
 
       <li>
   <div class="actions ">
-    <%= f.submit "Log in", class:"btn" %>
+    <%= f.submit "Login", class:"btn btn-primary" %>
   </div>
 <% end %>
   </li>

@@ -18,9 +18,9 @@
       <li><a href="#">Brands</a></li>
       <li><a href="../contacts/new">Contact Us</a></li>
       <% if buyer_signed_in? %>
-        <li>  <%=fa_icon "cart-plus 9x" , class: " fas fa-cart-plus fa-3x" , style: "color:turquoise; margin: 20px"%></li>
+        <li>  <%=fa_icon "shopping-cart 9x" , class: " fas fa-shopping-cart fa-3x" , style: "color:brown; margin: 20px"%></li>
 
-        <li> <%= current_buyer.email %> </li>
+
         <li>  <%= image_tag 'randomavatar.png',size:'70x70' %></li>
         <li><%= link_to "Logout",destroy_buyer_session_path, method: :delete %></li>
       <%elsif seller_signed_in? %>
