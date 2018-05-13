@@ -20,7 +20,7 @@
       <% if buyer_signed_in? %>
         <li >  <%=fa_icon "shopping-cart 9x" , class: " fas fa-shopping-cart fa-3x" , style: "color:brown; margin: 20px"%></li>
 
-        <li>  <%= image_tag 'randomavatar.png',size:'70x70' %></li>
+        <li> <%= link_to current_buyer.buyerinfo do %> <%= image_tag 'randomavatar.png',size:'70x70' %><% end  %></li>
         <li><%= link_to "Logout",destroy_buyer_session_path, method: :delete %></li>
       <%elsif seller_signed_in? %>
 

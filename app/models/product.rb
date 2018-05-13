@@ -9,8 +9,8 @@ class Product < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
   mount_uploader :image, ImageUploader
-  #validates :price,:name , presence: true
-  #validates_numericality_of :price
+  validates :price,:name , presence: true
+  validates_numericality_of :price
 
   #makes sure there are no current orders of the item wanted to be deleted
 private

@@ -3,19 +3,58 @@
   <aside id=“notice alert alert-info”><%= notice %></aside>
 <% end %>
 <div class="wrap cf">
-  <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
+  <h1 class="projTitle">The Beauty Behind <span>Pro-</span>ducts</h1>
   <div class="heading cf">
     <h1>My Yadawy Cart</h1>
-    <a href="#" class="continue">Continue Shopping</a>
-  </div>
-<h2>Your Yadawy Cart</h2>
 
+    <%= link_to "Continue Shopping", products_path, class:"continue" %>
+  </div>
+
+<div class="cart">
 <ul class="cartWrap">
   <% @cart.line_items.each do |item| %>
-    <li class="list-group-item"><%= item.quantity %> &times; <%= item.product.name %><div class="price"><%= number_to_currency(item.total_price)%> </div></li>
+
+      <li class="items <%=cycle('even','odd')%>">
+
+        <div class="infoWrap">
+          <div class="cartSection">
+            <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+            <p class="itemNumber"><%= item.id %></p>
+            <h3><%= item.product.name %></h3>
+
+            <p class="qty"> <%= item.quantity   %> &times; <%= number_to_currency(item.product.price)%></p>
+
+
+
+          <div style="float: right;">
+              <div class="prodTotal cartSection">
+                <p style=""><%= number_to_currency(item.total_price) %></p>
+              </div>
+              <div class="cartSection removeWrap">
+                <a href="#" class="remove">x</a>
+                <%= link_to "x", item ,class:"remove", method: :delete %>
+              </div>
+          </div>
+        </div>
+        </div>
+      </li>
+
   <% end %>
 </ul>
-<div><%= number_to_currency(@cart.total_price)%></div>
-<%= button_to 'Empty cart', @cart, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= button_to 'Checkout' , new_order_path, method: :get, class:"checkout" %>
+  <div class="promoCode"><label for="promo">Have A Promo Code?</label><input type="text" name="promo" placholder="Enter Code" />
+    <a href="" class="btn"></a></div>
+
+  <div class="subtotal cf">
+    <ul>
+
+
+
+      <li class="totalRow final"><span class="label">Total</span><span class="value"><%= number_to_currency(@cart.total_price)%></span></li>
+      <li class="totalRow"><%= button_to 'Checkout' , new_order_path, method: :get, class:"checkout btn continue" %></li>
+      <li><%= button_to 'Empty cart', @cart, method: :delete,class:"checkout btn continue", data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+  </div>
 </div>
+
+</div>
+

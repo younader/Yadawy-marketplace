@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_11_205317) do
+ActiveRecord::Schema.define(version: 2018_05_13_103546) do
 
   create_table "buyerinfos", force: :cascade do |t|
     t.string "fname"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_05_11_205317) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.string "city"
+    t.integer "gender"
     t.index ["buyer_id"], name: "index_buyerinfos_on_buyer_id"
   end
 
@@ -96,6 +97,8 @@ ActiveRecord::Schema.define(version: 2018_05_11_205317) do
     t.integer "pay_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "buyer_id"
+    t.index ["buyer_id"], name: "index_orders_on_buyer_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -108,6 +111,19 @@ ActiveRecord::Schema.define(version: 2018_05_11_205317) do
     t.datetime "updated_at", null: false
     t.integer "seller_id"
     t.index ["seller_id"], name: "index_products_on_seller_id"
+  end
+
+  create_table "sellerinfos", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.text "address"
+    t.integer "phone_number"
+    t.integer "gender"
+    t.string "city"
+    t.integer "seller_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["seller_id"], name: "index_sellerinfos_on_seller_id"
   end
 
   create_table "sellers", force: :cascade do |t|

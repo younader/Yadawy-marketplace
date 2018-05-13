@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_seller!, only:[:new, :create]
+  before_action :recommended, only: [:show]
   # GET /products
   # GET /products.json
   def index
@@ -10,6 +11,9 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @commentable=@product
+    @comments=@commentable.comments
+    @comment=Comment.new
   end
 
   # GET /products/new
@@ -73,5 +77,24 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :category,:price, :seller, :specs, :image)
+    end
+    def recommended
+      #selects similar products by selecting the orders where a certain product exists than indexing products bought on the same purchase
+      product_id=@product.id
+
+      arr=[]
+      temp=[]
+      lines=LineItem.joins(:order,:product)
+      orders=lines.where("product_id=#{product_id}").select("order_id")
+      if orders
+      orders.each {|k| arr.push(k[:order_id])}
+      jointproducts =lines.where("order_id IN (#{arr.join(',')})")
+      similar_products=jointproducts.where("product_id != #{product_id}" )
+       if similar_products
+         similar_products.each {|k| temp.push(k[:product_id]) }
+         @similar_p=Product.where("id IN (#{temp.join(',')})").limit(3)
+       end
+      end
+
     end
 end

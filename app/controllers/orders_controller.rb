@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
-
+    @order.buyer_id=current_buyer.id
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])

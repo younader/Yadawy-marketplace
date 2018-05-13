@@ -1,6 +1,6 @@
 class BuyerinfosController < ApplicationController
   before_action :set_buyerinfo, only: [:show, :edit, :update, :destroy]
-skip_before_action :complete_sign_up
+  skip_before_action :complete_sign_up
   # GET /buyerinfos
   # GET /buyerinfos.json
   def index
@@ -71,6 +71,6 @@ skip_before_action :complete_sign_up
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def buyerinfo_params
-      params.require(:buyerinfo).permit( :fname,:lname,:phone,:city,:address,:image)
+      params.require(:buyerinfo).permit( :fname,:lname,:phone,:city,:address,:image, :gender)
     end
 end

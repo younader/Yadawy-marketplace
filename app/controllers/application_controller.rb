@@ -10,6 +10,9 @@ private
     if buyer_signed_in? and current_buyer.buyerinfo.nil?
       redirect_to new_buyerinfo_path
 
+      else if seller_signed_in? and current_seller.sellerinfo.nil?
+           end
+      redirect_to new_sellerinfo_path
     end
   end
 

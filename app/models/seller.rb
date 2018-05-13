@@ -4,4 +4,5 @@ class Seller < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,:confirmable
   has_many :products
+  has_one :sellerinfo
 end

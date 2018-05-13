@@ -22,6 +22,11 @@
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
+  <div class="field">
+    <%= f.label :gender %>
+    <%= f.select :gender , Buyerinfo.genders.keys,
+                    prompt: 'Select your gender' %>
+  </div>
   <div class="infofield">
     <%= f.label :phone %><br>
     <%= f.telephone_field :phone %>

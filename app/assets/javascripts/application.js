@@ -17,7 +17,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= requrie font-awesome
-
+//= require Chart.min
+//= require Charts.min
 //= require_tree .
 /*
 $(document).ready(function(){

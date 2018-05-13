@@ -1,33 +1,31 @@
 <article>
-  <div class="row cardpanel">
-    <div class="col-4-sm">
-      <div class="card sadmincard" style="width: 20rem;">
-        <div class="card-body">
-          <h4><span><%= fa_icon "money-bill 9x" , class: " fas fa-money fa-2x" , style: "color:green; margin: 20px ; " %></span>
-          <%= number_to_currency(150000) %>
-          </h4>
-          <div style="text-align: right; font-weight: 400; color: #99abb4">
-            floos
-          </div>
-        </div>
+  <div class="row" >
+  <div class="card-deck" style="padding: 0 30px 0 30px">
+  <div class="col-4-sm">
+    <div class="sadmincard" style="width: 20rem; background-color: white;">
+      <div class="card-body">
+        <h4><span><%= fa_icon "money-bill 9x" , class: " fas fa-money fa-2x" , style: "color:green; margin: 20px" %></span>
+          <%= number_to_currency(@revenue) %>
+        </h4>
       </div>
-
     </div>
+
+  </div>
     <div class="col-4-sm">
-      <div class="card sadmincard" style="width: 20rem;">
+      <div class="sadmincard" style="width: 20rem; background-color: white;">
         <div class="card-body">
           <h4><span><%= fa_icon "money-bill 9x" , class: " fas fa-money fa-2x" , style: "color:green; margin: 20px" %></span>
-            <%= number_to_currency(150000) %>
+            <%= number_to_currency(@revenue) %>
           </h4>
         </div>
       </div>
 
     </div>
     <div class="col-4-sm">
-      <div class="card sadmincard" style="width: 20rem;">
+      <div class="sadmincard" style="width: 20rem; background-color: white;">
         <div class="card-body">
           <h4><span><%= fa_icon "money-bill 9x" , class: " fas fa-money fa-2x" , style: "color:green; margin: 20px" %></span>
-            <%= number_to_currency(150000) %>
+            <%= number_to_currency(@revenue) %>
           </h4>
         </div>
       </div>
@@ -35,6 +33,29 @@
     </div>
   </div>
   <div></div>
-
+  </div>
+  <% data = {
+      labels: 5.downto(0).collect do |n|
+        Date::MONTHNAMES[n.months.ago.month]
+      end,
+      datasets: [
+          {
+              label: "My First dataset",
+              backgroundColor: "rgba(220,220,220,0.2)",
+              borderColor: "rgba(220,220,220,1)",
+              data: [65, 59, 80, 81, 56, 55, 40]
+          },
+          {
+              label: "My Second dataset",
+              backgroundColor: "rgba(151,187,205,0.2)",
+              borderColor: "rgba(151,187,205,1)",
+              data: [28, 48, 40, 19, 86, 27, 90]
+          }
+      ]
+  } %>
+  <div style="max-height: 400px;max-width: 400px">
+    <% options={:width=>"300", :height=>"300"} %>
+    <%= line_chart data, options %>
+  </div>
 
 </article>

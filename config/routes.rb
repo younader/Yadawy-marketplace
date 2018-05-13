@@ -1,5 +1,20 @@
 
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :buyerinfos
+      resources :contacts
+      resources :products
+      resources :users
+      resources :sellers
+      resources :buyers
+      resources :carts
+      resources :categories
+      resources :comments
+      resources :line_items
+      resources :orders
+      resources :sellerinfos
+      root to: "buyerinfos#index"
+    end
   get 'comments/index'
   get 'comments/new'
   resources :orders
@@ -16,6 +31,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   resources :buyerinfos
+  resources :sellerinfos
   get '/login'=> "sessions#new", as:"login"
 
   get 'sessions/create'
